@@ -6,4 +6,10 @@ class System:
         self.dt = dt
 
     def step(self):
-        self.integrator.step(self.particle, self.force, self.dt)
+        # Support either a single force object or a list/tuple of forces.
+        if isinstance(self.force, (list, tuple)):
+            total_force = sum(force.compute(self.particle) for force in self.force)
+        else:
+            total_force = self.force.compute(self.particle)
+
+        self.integrator.step(self.particle, total_force, self.dt)
