@@ -55,8 +55,3 @@ Then choose from the menu:
 - `5` Damped oscillator
 - `0` Exit
 
-## Notes
-
-- The file is named `lissagous.py` in this project (spelling kept to match imports in `main.py`).
-- Most simulations open a Matplotlib plot window; close the plot to return control to the terminal.
-
